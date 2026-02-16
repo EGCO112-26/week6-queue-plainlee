@@ -46,12 +46,11 @@
 
 struct node
 {
-    int order_number;
-    int qty;
+    int data;
     struct node *nextPtr;
 };
 
-typedef struct node order;
-typedef struct node* OrderPtr;
+typedef struct node Node;
+typedef struct node* NodePtr;
 
 #endif
