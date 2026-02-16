@@ -1,4 +1,5 @@
-argument: main.c 
+compile: main.c 
 	gcc main.c -o Q
+
 run: Q
-	./Q
+	./Q 1 2 3 2 x 3 2 x
