@@ -50,7 +50,6 @@ int main(int argc , char **argv) {
             if(q.size > 0){
                 int current_qty = 0;
                 order_code = dequeue_struct(&q, &current_qty);
-                
                 printf("Cutomer no: %d\n", customer_no++); 
                 
                 switch(order_code){
@@ -69,8 +68,9 @@ int main(int argc , char **argv) {
                     while(paid < total_price){
                         if(paid == 0) printf(":Cash:"); 
                         else printf("Cash:");
-                        
-                        scanf("%d", &cash);
+
+                        int result = scanf("%d", &cash);
+                        if(result != 1) break;
                         paid += cash;
                     }
                     
@@ -100,7 +100,7 @@ int main(int argc , char **argv) {
 
     printf("There are %d ppl left in the queue\n", q.size);
     
-
+    // เคลียร์ memory
     int temp;
     while(q.size > 0){
         dequeue_struct(&q, &temp);
